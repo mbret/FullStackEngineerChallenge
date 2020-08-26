@@ -17,6 +17,7 @@ export const ManagePerformanceReviews = () => {
     setLocalReviews(reviews)
   }, [reviews])
 
+  // Create a new performance review
   useEffect(() => {
     newReview && setNewReview(undefined)
 
@@ -39,6 +40,7 @@ export const ManagePerformanceReviews = () => {
     }
   }, [newReview, localReviews])
 
+  // Delete a performance review
   useEffect(() => {
     reviewToRemove && setReviewToRemove(undefined)
 
@@ -76,17 +78,11 @@ export const ManagePerformanceReviews = () => {
                 <td>{review.employee?.name}</td>
                 <td>{review.grade}</td>
                 <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => setReviewToRemove(review.id)}
-                  >
+                  <Button variant="warning" onClick={() => setReviewToRemove(review.id)} >
                     Remove
                   </Button>
                 &nbsp;
-                <Button
-                    variant="info"
-                    onClick={() => setReviewToEdit(review.id)}
-                  >
+                <Button variant="info" onClick={() => setReviewToEdit(review.id)} >
                     Manage feedback requests
                 </Button>
                 </td>

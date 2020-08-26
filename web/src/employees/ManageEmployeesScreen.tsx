@@ -13,6 +13,7 @@ export const ManageEmployeesScreen = () => {
     setLocalEmployees(employees)
   }, [employees])
 
+  // Create a new employee
   useEffect(() => {
     newEmployee && setNewEmployee(undefined)
 
@@ -35,6 +36,7 @@ export const ManageEmployeesScreen = () => {
     }
   }, [newEmployee, localEmployees])
 
+  // Delete an employe
   useEffect(() => {
     employeeToRemove && setEmployeeToRemove(undefined)
 
